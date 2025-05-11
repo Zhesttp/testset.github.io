@@ -9,16 +9,19 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main2.css">
+  <link rel="stylesheet" href="assets/css/calc.css">
 </head>
 <body>
 
 
 <div class="device-notification">
   <a class="device-notification--logo" href="#0">
-    <img src="assets/img/logo.png" alt="Global">
-    <p>Global</p>
+    <!-- в дальнейшем лого изменить на лого компании -->
+    <img src="assets/img/logo.png" alt="Haos"> 
+    <p>HaosGroup</p>
   </a>
-  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+  <p class="device-notification--message">Самая удобная доставка из Китая!</p>
 </div>
 
 <div class="perspective effect-rotate-left">
@@ -28,7 +31,7 @@
         <header class="header">
           <a class="header--logo" href="#0">
             <img src="assets/img/logo.png" alt="Global">
-            <p>Global</p>
+            <p>HAOS</p>
           </a>
           <button class="header--cta cta">Hire Us</button>
           <div class="header--nav-toggle">
@@ -37,19 +40,19 @@
         </header>
         <nav class="l-side-nav">
           <ul class="side-nav">
-            <li class="is-active"><span>Home</span></li>
-            <li><span>Works</span></li>
-            <li><span>About</span></li>
-            <li><span>Contact</span></li>
-            <li><span>Hire us</span></li>
+            <li class="is-active"><span>Главная</span></li>
+            <li><span>Какулятор</span></li>
+            <li><span>О нас</span></li>
+            <li><span>Контакты</span></li>
+            <li><span>Оставить заявку</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>Your next<br>interactive<br>experience</h1>
-                <button class="cta">Hire Us
+                <h1>Доставка<br>из<br>Китая</h1>
+                <button class="cta">Калькулятор
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -59,7 +62,7 @@
                 </button>
                 <img src="assets/img/introduction-visual.png" alt="Welcome">
               </div>
-              <div class="intro--options">
+              <!-- <div class="intro--options">
                 <a href="#0">
                   <h3>Metiew &amp; Smith</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
@@ -72,62 +75,154 @@
                   <h3>Paul &amp; shark</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
                 </a>
-              </div>
+              </div> -->
             </div>
           </li>
+
+
+          <!-- Калькулятор -->
+
           <li class="l-section section">
-            <div class="work">
-              <h2>Selected work</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/work-victory.jpg" alt="Victory">
-                      </div>
-                      <p class="slider--item-title">Victory</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/work-metiew-smith.jpg" alt="Metiew and Smith">
-                      </div>
-                      <p class="slider--item-title">Metiew &amp; Smith</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Alex Nowak</p>
-                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
+            <div class="calculator" id="section-work">
+            <h2>Калькулятор доставки</h2>
+            <div class="calculator--form">
+              <form id="delivery-calculator">
+                <!-- Блок маршрута -->
+                <div class="form-section">
+                  <h3 class="section-title">Маршрут</h3>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="route-from">Откуда</label>
+                      <select id="route-from" class="form-select" required>
+                        <option value="">Выберите город</option>
+                        <option value="beijing">Пекин</option>
+                        <option value="shanghai">Шанхай</option>
+                        <option value="guangzhou">Гуанчжоу</option>
+                        <option value="shenzhen">Шэньчжэнь</option>
+                        <option value="yiwu">Иу</option>
+                        <!-- Добавлены административные центры провинций Китая -->
+                        <option value="tianjin">Тяньцзинь</option>
+                        <option value="chongqing">Чунцин</option>
+                        <option value="haerbin">Харбин</option>
+                        <option value="changchun">Чанчунь</option>
+                        <option value="shenyang">Шэньян</option>
+                        <!-- И другие административные центры по списку из Википедии -->
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="route-to">Куда</label>
+                      <select id="route-to" class="form-select" required>
+                        <option value="">Выберите город</option>
+                        <option value="minsk">Минск, Беларусь</option>
+                        <option value="moscow">Москва, Россия</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
+
+                <!-- Блок товара -->
+                <div class="form-section">
+                  <h3 class="section-title">Товар</h3>
+                  <div class="form-group">
+                    <label for="product-name">Название товара</label>
+                    <input type="text" id="product-name" class="form-input" placeholder="Начните вводить название" required>
+                    <div id="tnved-suggestions" class="suggestions-box"></div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="product-weight">Вес, кг</label>
+                      <input type="number" id="product-weight" class="form-input" min="1" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="product-volume">Объем, м³</label>
+                      <input type="number" id="product-volume" class="form-input" step="0.01" min="0.01" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="product-cost">Стоимость товара, $</label>
+                      <input type="number" id="product-cost" class="form-input" min="1" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="product-quantity">Количество</label>
+                      <input type="number" id="product-quantity" class="form-input" min="1" required>
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Блок типа перевозки -->
+                <div class="form-section">
+                  <h3 class="section-title">Тип перевозки</h3>
+                  <div class="transport-types">
+                    <div class="transport-option">
+                      <input type="radio" id="shipment-type-lcl" name="shipment-type" value="lcl" checked>
+                      <label for="shipment-type-lcl">
+                        <span class="transport-icon">📦</span>
+                        <span class="transport-title">Сборный груз (LCL)</span>
+                        <span class="transport-desc">Малые партии до 20 м³</span>
+                      </label>
+                    </div>
+                    <div class="transport-option">
+                      <input type="radio" id="shipment-type-ftl" name="shipment-type" value="ftl">
+                      <label for="shipment-type-ftl">
+                        <span class="transport-icon">🚛</span>
+                        <span class="transport-title">Полная загрузка (FTL)</span>
+                        <span class="transport-desc">От 20 м³ до 82 м³</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" class="cta calculate-btn">Рассчитать</button>
+              </form>
+              
+              <!-- Блок результатов -->
+              <div id="calculation-result" class="result-section" style="display: none;">
+                <h3 class="result-title">Результаты расчета</h3>
+                
+                <div class="result-grid">
+                  <div class="result-item">
+                    <span class="result-label">Плотность груза (кг/м³):</span>
+                    <span class="result-value" id="density-result">-</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">Тариф за доставку ($/кг):</span>
+                    <span class="result-value" id="delivery-rate-result">-</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">Стоимость доставки ($):</span>
+                    <span class="result-value" id="delivery-cost-result">-</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">Таможенная пошлина ($):</span>
+                    <span class="result-value" id="customs-duty-result">-</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">НДС ($):</span>
+                    <span class="result-value" id="vat-result">-</span>
+                  </div>
+                  <div class="result-item total">
+                    <span class="result-label">Итоговая стоимость ($):</span>
+                    <span class="result-value" id="total-cost-result">-</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">Стоимость единицы ($):</span>
+                    <span class="result-value" id="unit-cost-result">-</span>
+                  </div>
+                </div>
+                
+                <button id="send-request-btn" class="cta request-btn">Отправить заявку</button>
               </div>
             </div>
-          </li>
+          </div>
+        </li>
+
+        <!-- конеец калькулятора -->
+
+
+
           <li class="l-section section">
             <div class="about">
               <div class="about--banner">
@@ -161,9 +256,9 @@
               <div class="contact--lockup">
                 <div class="modal">
                   <div class="modal--information">
-                    <p>Pawia 5, 31-154 Kraków, Poland</p>
-                    <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a>
-                    <a href="tel:+148126287560">+48 12 628 75 60</a>
+                    <p>Минск, Жиновчиа 9</p>
+                    <a href="mailto:ouremail@gmail.com">haosgroup@gmail.com</a>
+                    <a href="tel:+375295314144">+375 29 531 41 44</a>
                   </div>
                   <ul class="modal--options">
                     <li><a href="#0">Bēhance</a></li>
@@ -264,16 +359,17 @@
     </div>
   </div>
   <ul class="outer-nav">
-    <li class="is-active">Home</li>
-    <li>Works</li>
-    <li>About</li>
-    <li>Contact</li>
-    <li>Hire us</li>
+    <li class="is-active">Главная</li>
+    <li>КАЛЬКУЛЯТОР</li>
+    <li>О НАС</li>
+    <li>КОНТАКТЫ</li>
+    <li>ЗАЯВКА</li>
   </ul>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
+<script src="assets/js/calc.js"></script>
 </body>
 </html>
