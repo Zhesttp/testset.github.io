@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Global</title>
+  <title>HAOSGROUP</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +10,17 @@
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/main2.css">
-  <link rel="stylesheet" href="assets/css/calc.css">
+  <link rel="stylesheet" href="assets/css/cal.css">
 </head>
 <body>
 
-
+<!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
   <a class="device-notification--logo" href="#0">
-    <!-- в дальнейшем лого изменить на лого компании -->
-    <img src="assets/img/logo.png" alt="Haos"> 
-    <p>HaosGroup</p>
+    <img src="assets/img/logo.png" alt="Global">
+    <p>HAOSGROUP</p>
   </a>
-  <p class="device-notification--message">Самая удобная доставка из Китая!</p>
+  <p class="device-notification--message">HAOSGROUP компания для доставки товара из Китая.</p>
 </div>
 
 <div class="perspective effect-rotate-left">
@@ -31,444 +30,260 @@
         <header class="header">
           <a class="header--logo" href="#0">
             <img src="assets/img/logo.png" alt="Global">
-            <p>HAOS</p>
+            <p>HAOSGROUP</p>
           </a>
+  
           <div class="header--nav-toggle">
             <span></span>
           </div>
         </header>
-        <nav class="l-side-nav">
+        <!-- <nav class="l-side-nav">
           <ul class="side-nav">
-            <li class="is-active"><span>Главная</span></li>
-            <li><span>Какулятор</span></li>
-            <li><span>О нас</span></li>
-            <li><span>Контакты</span></li>
-            <li><span>Оставить заявку</span></li>
+            <li class="is-active"><span></span></li>
+            <li><span>Works</span></li>
+            <li><span>About</span></li>
+            <li><span>Contact</span></li>
+            <li><span>Hire us</span></li>
           </ul>
-        </nav>
+        </nav> -->
         <ul class="l-main-content main-content">
-         
-         
+
+
+          <!-- главная секция с кнопками "КАЛЬКУЛЯТОР" "СОЗДАТЬ ДОКУМЕНТ" "О НАС" -->
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>ГЛАВНОЕ МЕНЮ</h1>
-                <div class="main-menu-buttons">
-                  <button class="calculator-btn" onclick="scrollToSection('Layer_1_2')">
-                      Калькулятор
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                          <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                              <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                          </g>
-                      </svg>
-                      <span class="btn-background"></span>
-                  </button>
-                  
-                  <button class="calculator-btn" onclick="scrollToSection('document-section')">
-                      Создать документ
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="15px" height="15px">
-                          <g>
-                              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" fill="#fff"/>
-                          </g>
-                      </svg>
-                      <span class="btn-background"></span>
-                  </button>
-              </div>
-                <img src="assets/img/introduction-visual.png" alt="Welcome">
+                <h1>Главная</h1>
+                <div class="intro--options">
+                  <a href="#calc-section" onclick="scrollToSection('calc-section')">
+                    <h3>Калькулятор</h3>
+                  </a>
+                  <a href="#" onclick="openSection('doc-section')">
+                    <h3>Создать документ</h3>
+                  </a>
+                  <a href="#" onclick="openSection('about-section')">
+                    <h3>О нас</h3>
+                  </a>
+                </div>
               </div>
             </div>
           </li>
+          <!-- Конец главной страницы -->
 
-
-     <!-- Калькулятор -->
-<li class="l-section section"  id="Layer_1_2">
-  <div class="calculator" id="section-work">
-    <h2>Калькулятор доставки</h2>
-    <div class="calculator--form">
-      <form id="delivery-calculator">
-        <!-- Тип расчета -->
-        <div class="form-section2">
-          <h3 class="section-title">Тип расчета</h3>
-          <div class="transport-types">
-            <div class="transport-option">
-              <input type="radio" id="calculation-type-cargo" name="calculation-type" value="cargo" checked>
-              <label for="calculation-type-cargo">
-                <span class="transport-icon">🚚</span>
-                <span class="transport-title">Карго (от $0.8/кг)</span>
-              </label>
-            </div>
-            <div class="transport-option">
-              <input type="radio" id="calculation-type-customs" name="calculation-type" value="customs">
-              <label for="calculation-type-customs">
-                <span class="transport-icon">🛃</span>
-                <span class="transport-title">Таможенный (от $0.25/кг)</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Услуги -->
-        <div class="form-section">
-          <h3 class="section-title">Меня интересует</h3>
-          <div class="transport-types">
-            <div class="transport-option">
-              <input type="radio" id="service-type-delivery" name="service-type" value="delivery" checked>
-              <label for="service-type-delivery">
-                <span class="transport-title">Только доставка</span>
-              </label>
-            </div>
-            <div class="transport-option">
-              <input type="radio" id="service-type-purchase" name="service-type" value="purchase">
-              <label for="service-type-purchase">
-                <span class="transport-title">Доставка и выкуп</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Маршрут -->
-        <div class="form-section">
-          <h3 class="section-title">Маршрут</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="route-from">Откуда</label>
-              <select id="route-from" class="form-select" required>
-                  <option value="">Выберите город</option>
-                  <!-- Провинции КНР и их столицы -->
-                  <option value="hefei">Хэфэй (Аньхой)</option>
-                  <option value="fuzhou">Фучжоу (Фуцзянь)</option>
-                  <option value="lanzhou">Ланьчжоу (Ганьсу)</option>
-                  <option value="guangzhou">Гуанчжоу (Гуандун)</option>
-                  <option value="guiyang">Гуйян (Гуйчжоу)</option>
-                  <option value="haikou">Хайкоу (Хайнань)</option>
-                  <option value="shijiazhuang">Шицзячжуан (Хэбэй)</option>
-                  <option value="harbin">Харбин (Хэйлунцзян)</option>
-                  <option value="zhengzhou">Чжэнчжоу (Хэнань)</option>
-                  <option value="wuhan">Ухань (Хубэй)</option>
-                  <option value="changsha">Чанша (Хунань)</option>
-                  <option value="nanjing">Нанкин (Цзянсу)</option>
-                  <option value="nanchang">Наньчан (Цзянси)</option>
-                  <option value="changchun">Чанчунь (Гирин / Цзилинь)</option>
-                  <option value="shenyang">Шэньян (Ляонин)</option>
-                  <option value="xining">Синин (Цинхай)</option>
-                  <option value="xian">Сиань (Шэньси)</option>
-                  <option value="jinan">Цзинань (Шаньдун)</option>
-                  <option value="taiyuan">Тайюань (Шаньси)</option>
-                  <option value="chengdu">Чэнду (Сычуань)</option>
-                  <option value="kunming">Куньмин (Юньнань)</option>
-                  <option value="hangzhou">Ханчжоу (Чжэцзян)</option>
-                  <option value="taipei">Тайбэй (Тайвань*)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="route-to">Куда</label>
-              <select id="route-to" class="form-select" required>
-                <option value="">Выберите город</option>
-                <option value="minsk">Минск, Беларусь</option>
-                <option value="moscow">Москва, Россия</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="checkbox-label">
-                <input type="checkbox" id="insurance">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text">Страховать груз</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Параметры груза -->
-        <div class="form-section">
-          <h3 class="section-title">Параметры груза</h3>
-          <div class="transport-types tab-switcher">
-            <div class="transport-option">
-              <input type="radio" id="params-type-general" name="params-type" value="general" checked>
-              <label for="params-type-general">
-                <span class="transport-title">Общий вес и объем</span>
-              </label>
-            </div>
-            <div class="transport-option">
-              <input type="radio" id="params-type-dimensions" name="params-type" value="dimensions">
-              <label for="params-type-dimensions">
-                <span class="transport-title">По габаритам</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Общий вес и объем -->
-          <div id="general-params" class="params-tab">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="product-volume">Общий объем, м³</label>
-                <input type="number" id="product-volume" class="form-input" step="0.01" min="0.01" required>
-              </div>
-              <div class="form-group">
-                <label for="product-weight">Общий вес, кг</label>
-                <input type="number" id="product-weight" class="form-input" min="1" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="product-quantity">Кол-во мест</label>
-                <input type="number" id="product-quantity" class="form-input" min="1" required>
-              </div>
-              <div class="form-group">
-                <label for="product-cost">Общая стоимость</label>
-                <div class="cost-input">
-                  <input type="number" id="product-cost" class="form-input" min="1" required>
-                  <select id="product-currency" class="form-select currency-select">
-                    <option value="usd">$</option>
-                    <option value="cny">¥</option>
-                    <option value="byn">Br</option>
-                    <option value="rub">₽</option>
-                  </select>
+          <!-- Калькулятор -->
+          <li class="l-section section" id="calc-section" name="calc-section">
+            <div class="calculator" id="section-work">
+              <h2>Калькулятор доставки</h2>
+              <div class="calculator--form">
+                <form id="delivery-calculator">
+                  <!-- Маршрут -->
+                  <div class="form-section">
+                    <h3 class="section-title">Маршрут</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="route-from">Откуда</label>
+                        <select id="route-from" class="form-select" required>
+                            <option value="">Выберите город</option>
+                            <option value="guangzhou">Гуанчжоу (Гуандун)</option>
+                            <option value="shanghai">Шанхай</option>
+                            <option value="beijing">Пекин</option>
+                            <option value="shenzhen">Шэньчжэнь</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="route-to">Куда</label>
+                        <select id="route-to" class="form-select" required>
+                          <option value="">Выберите город</option>
+                          <option value="minsk">Минск, Беларусь</option>
+                          <option value="moscow">Москва, Россия</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- Название товара -->
+                  <div class="form-section">
+                    <h3 class="section-title">Информация о товаре</h3>
+                    <div class="form-group">
+                      <label for="product-name">Название товара</label>
+                      <input type="text" id="product-name" class="form-input" placeholder="Начните вводить название товара" required>
+                      <div id="product-suggestions" class="suggestions-box"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="tnved-code">Код ТНВЭД</label>
+                      <input type="text" id="tnved-code" class="form-input" placeholder="Код товара" required>
+                    </div>
+                  </div>
+            
+                  <!-- Параметры груза -->
+                  <div class="form-section">
+                    <h3 class="section-title">Параметры груза</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="product-weight">Вес, кг</label>
+                        <input type="number" id="product-weight" class="form-input" min="1" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-volume">Объем, м³</label>
+                        <input type="number" id="product-volume" class="form-input" step="0.01" min="0.01" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="product-quantity">Кол-во единиц</label>
+                        <input type="number" id="product-quantity" class="form-input" min="1" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="product-cost">Общая стоимость</label>
+                        <div class="cost-input">
+                          <input type="number" id="product-cost" class="form-input" min="1" required>
+                          <select id="product-currency" class="form-select currency-select">
+                            <option value="usd">$</option>
+                            <option value="cny">¥</option>
+                            <option value="byn">Br</option>
+                            <option value="rub">₽</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- Тип перевозки -->
+                  <div class="form-section">
+                    <h3 class="section-title">Тип перевозки</h3>
+                    <div class="transport-types">
+                      <div class="transport-option">
+                        <input type="radio" id="transport-type-ftl" name="transport-type" value="ftl" checked>
+                        <label for="transport-type-ftl">
+                          <span class="transport-icon">🚛</span>
+                          <span class="transport-title">FTL (полная загрузка)</span>
+                          <span class="transport-desc">До 24000 кг и 60 м³</span>
+                        </label>
+                      </div>
+                      <div class="transport-option">
+                        <input type="radio" id="transport-type-ltl" name="transport-type" value="ltl">
+                        <label for="transport-type-ltl">
+                          <span class="transport-icon">📦</span>
+                          <span class="transport-title">LTL (сборный груз)</span>
+                          <span class="transport-desc">Меньше 24000 кг и 60 м³</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <button type="submit" class="calculate-btn">Рассчитать онлайн</button>
+                </form>
+                
+                <!-- Блок результатов -->
+                <div id="calculation-result" class="result-section" style="display: none;">
+                  <!-- Здесь будет результат расчета -->
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="product-category">Категория груза</label>
-              <select id="product-category" class="form-select">
-                <option value="electric">Электрическая</option>
-                <option value="diesel">Дизель</option>
-                <option value="petrol">Бензин</option>
-                <option value="hybrid">Гибрид</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- По габаритам -->
-          <div id="dimensions-params" class="params-tab" style="display: none;">
-            <h4>Габариты (Длина * Ширина * Высота) см</h4>
-            <div class="dimensions-inputs">
-              <input type="number" id="length" class="form-input dimension-input" placeholder="Длина" min="1">
-              <span class="dimension-separator">*</span>
-              <input type="number" id="width" class="form-input dimension-input" placeholder="Ширина" min="1">
-              <span class="dimension-separator">*</span>
-              <input type="number" id="height" class="form-input dimension-input" placeholder="Высота" min="1">
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="dimensions-quantity">Кол-во мест</label>
-                <input type="number" id="dimensions-quantity" class="form-input" min="1">
-              </div>
-              <div class="form-group">
-                <label for="dimensions-cost">Общая стоимость</label>
-                <div class="cost-input">
-                  <input type="number" id="dimensions-cost" class="form-input" min="1">
-                  <select id="dimensions-currency" class="form-select currency-select">
-                    <option value="usd">$</option>
-                    <option value="cny">¥</option>
-                    <option value="byn">Br</option>
-                    <option value="rub">₽</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="dimensions-category">Категория груза</label>
-              <select id="dimensions-category" class="form-select">
-                <option value="electric">Электрическая</option>
-                <option value="diesel">Дизель</option>
-                <option value="petrol">Бензин</option>
-                <option value="hybrid">Гибрид</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <button type="submit" class="calculate-btn">Рассчитать онлайн</button>
-      </form>
-      
-      <!-- Блок результатов -->
-      <div id="calculation-result" class="result-section" style="display: none;">
-        <!-- Остается без изменений -->
-      </div>
-    </div>
-  </div>
-</li>
-
-        <!-- конеец калькулятора -->
+            </li>
+          <!-- Конец калькулятора -->
 
 
-<!-- создание документа -->
-    <li class="l-section section" id="document-section">
-        <div class="about">
-          <div class="about--banner">
-            <h1>ЗАПОЛНЕНИЕ ДОКУМЕНТА</h1>
-          </div>
-          <div class="document-form">
-            <form id="document-creation-form">
-              <div class="form-row">
+          <!-- создание документа -->
+          <li class="l-section section" id="doc-section">
+            <div class="work">
+              <h2>Создание документа</h2>
+              <form id="doc-form">
                 <div class="form-group">
-                  <input type="text" id="last-name" class="form-input" required>
-                  <label for="last-name">Фамилия</label>
+                  <input type="text" id="fio" name="fio" required autocomplete="off" />
+                  <label for="fio">ФИО</label>
                 </div>
+              
                 <div class="form-group">
-                  <input type="text" id="first-name" class="form-input" required>
-                  <label for="first-name">Имя</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" id="middle-name" class="form-input">
-                <label for="middle-name">Отчество</label>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <input type="text" id="country" class="form-input" required>
+                  <input type="text" id="country" name="country" required autocomplete="off" />
                   <label for="country">Страна</label>
                 </div>
+              
                 <div class="form-group">
-                  <input type="text" id="city" class="form-input" required>
+                  <input type="text" id="city" name="city" required autocomplete="off" />
                   <label for="city">Город</label>
                 </div>
-              </div>
-              <div class="form-group">
-                <input type="text" id="address" class="form-input" required>
-                <label for="address">Адрес</label>
-              </div>
-              <div class="form-group">
-                <input type="tel" id="phone" class="form-input" required>
-                <label for="phone">Телефон</label>
-              </div>
-              <div class="form-group">
-                <label for="document-type"></label>
-                <select id="document-type" class="form-select" required>
-                  <option value="pdf">PDF документ</option>
-                  <option value="word">Word документ</option>
-                </select>
-              </div>
-              <button type="submit" class="create-doc-btn calculator-btn">Создать документ</button>
-            </form>
-          </div>
-        </div>
-      </li>
+              
+                <div class="form-group">
+                  <input type="tel" id="phone" name="phone" required autocomplete="off" />
+                  <label for="phone">Телефон</label>
+                </div>
+              
+                <div class="form-group">
+                  <select id="doctype" name="doctype" required>
+                    <option value="" disabled selected>Выберите тип</option>
+                    <option value="pdf">PDF</option>
+                    <option value="docx">DOCX</option>
+                    <option value="txt">TXT</option>
+                    <option value="rtf">RTF</option>
+                  </select>
+                  <label for="doctype"></label>
+                </div>
+              
+                <button type="submit">Создать</button>
+              </form>
+              
+            </div>
+          </li>
+          <!-- конец создания документа  -->
 
+          <!-- Отслеживание -->
+          <li class="l-section section" id="track-section">
+            <div class="work">
+              <h1>Отслеживание посылки</h1>
+              <form id="track-form">
+                <label>Введите трек-номер:<br>
+                  <input type="text" name="track-number" required>
+                </label><br>
+                <button type="submit">Проверить</button>
+              </form>
+              <div id="track-result"></div>
+            </div>
+          </li>
+          <!-- конец Отслеживания -->
 
-      <!-- конец создания документа  -->
-
-
-          <li class="l-section section">
+          <li class="l-section section" id="about-section">
             <div class="contact">
               <div class="contact--lockup">
                 <div class="modal">
                   <div class="modal--information">
-                    <p>Минск, Жиновчиа 9</p>
-                    <a href="mailto:ouremail@gmail.com">haosgroup@gmail.com</a>
-                    <a href="tel:+375295314144">+375 29 531 41 44</a>
+                    <p>ул. Домбровская, д. 9 офис 12.2.3.1п</p>
+                    <a href="mailto:haosgroup@gmail.com">haosgroup@gmail.com</a>
+                    <a href="tel:+375295314144">+375 29 53 14 144</a>
                   </div>
                   <ul class="modal--options">
-                  
-                    <li><a href="mailto:haousgruo@gmail.com">Почта</a></li>
+
+                    <li><a href="mailto:ouremail@gmail.com">Связаться</a></li>
                   </ul>
                 </div>
               </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="hire">
-              <h2>Хотели задать вопрос?</h2>
-              <form class="work-request">
-                <div class="work-request--options">
-                  <span class="options-a">
-                    <input id="opt-1" type="checkbox" value="app design">
-                    <label for="opt-1">
-                      <svg version="1.1" id="Layer_1_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Доставка
-                    </label>
-                    <input id="opt-2" type="checkbox" value="graphic design">
-                    <label for="opt-2">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Стоимость
-                    </label>
-                    <input id="opt-3" type="checkbox" value="motion design">
-                    <label for="opt-3">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Сроки
-                    </label>
-                  </span>
-                  <span class="options-b">
-                    <input id="opt-4" type="checkbox" value="ux design">
-                    <label for="opt-4">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Страны
-                    </label>
-                    <input id="opt-5" type="checkbox" value="webdesign">
-                    <label for="opt-5">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Вид ТС
-                    </label>
-                    <input id="opt-6" type="checkbox" value="marketing">
-                    <label for="opt-6">
-                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
-                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
-                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
-                      </g>
-                      </svg>
-                      Куда подойти
-                    </label>
-                  </span>
-                </div>
-                <div class="work-request--information">
-                  <div class="information-name">
-                    <input id="name" type="text" spellcheck="false">
-                    <label for="name">Имя</label>
-                  </div>
-                  <div class="information-email">
-                    <input id="email" type="email" spellcheck="false">
-                    <label for="email">Номер</label>
-                  </div>
-                </div>
-                <input type="submit" value="ОТПРАВИТЬ">
-              </form>
             </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <ul class="outer-nav">
+  <ul class="outer-nav ">
     <li class="is-active">ГЛАВНАЯ</li>
     <li>КАЛЬКУЛЯТОР</li>
     <li>ДОКУМЕНТЫ</li>
-    <li>КОНТАКТЫ</li>
-    <li>ЗАЯВКА</li>
+    <li>ОТСЛЕЖИВАНИЕ</li>
+    <li>О НАС</li>
   </ul>
 </div>
 
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.6/pizzip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.1/docxtemplater.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
-<script src="assets/js/calc.js"></script>
-<script src="assets/js/fun.js"></script>
-<script src="assets/js/documents.js"></script>
+<script src="assets/js/docs.js"></script>
+<script src="assets/js/dop.js"></script>
+<script src="assets/js/logistic-calc.js"></script> 
+<script src="assets/js/functions-min.js"></script>
+<script src="assets/js/custom-scroll.js"></script>
 </body>
 </html>
