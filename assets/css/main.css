@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Rubik';
     src: url("fonts/Montserrat-Black.eot");
-    src: local("☺"), url("fonts/Montserrat-Black.woff") format("woff"), url("fonts/Rubik-Black.ttf") format("truetype"), url("fonts/Montserrat-Black.svg") format("svg");
+    src: local("☺"), url("fonts/Rubik-Black.woff") format("woff"), url("fonts/Rubik-Black.ttf") format("truetype"), url("fonts/Rubik-Black.svg") format("svg");
     font-weight: 900;
     font-style: normal;
 }
@@ -9,23 +9,23 @@
 @font-face {
     font-family: 'Rubik';
     src: url("fonts/Montserrat-Bold.eot");
-    src: local("☺"), url("fonts/Montserrat-Bold.woff") format("woff"), url("fonts/Rubik-Bold.ttf") format("truetype"), url("fonts/Montserrat-Bold.svg") format("svg");
+    src: local("☺"), url("fonts/Rubik-Bold.woff") format("woff"), url("fonts/Rubik-Bold.ttf") format("truetype"), url("fonts/Rubik-Bold.svg") format("svg");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
-    src: url("fonts/Montserrat-Regular.eot");
-    src: local("☺"), url("fonts/Montserrat-Regular.woff") format("woff"), url("fonts/Rubik-Regular.ttf") format("truetype"), url("fonts/Montserrat-Regular.svg") format("svg");
+    src: url("fonts/Rubik-Regular.eot");
+    src: local("☺"), url("fonts/Rubik-Regular.woff") format("woff"), url("fonts/Rubik-Regular.ttf") format("truetype"), url("fonts/Rubik-Regular.svg") format("svg");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
-    src: url("fonts/Montserrat-Light.eot");
-    src: local("☺"), url("fonts/Montserrat-Light.woff") format("woff"), url("fonts/Rubik-Light.ttf") format("truetype"), url("fonts/Montserrat-Light.svg") format("svg");
+    src: url("fonts/Rubik-Light.eot");
+    src: local("☺"), url("fonts/Rubik-Light.woff") format("woff"), url("fonts/Rubik-Light.ttf") format("truetype"), url("fonts/Rubik-Light.svg") format("svg");
     font-weight: 300;
     font-style: normal;
 }
@@ -39,6 +39,7 @@ html {
 
 body {
     margin: 0;
+     font-family: 'Rubik', sans-serif;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
