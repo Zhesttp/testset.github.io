@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function sendEmail(data) {
-        const botToken = '7975627033:AAEfejR5-EFDa9X-xaFb4ZUoYz0xJ27k360';
+        const botToken = '7922779742:AAFFA_3OlznkAhuB2tE1we2OzbttMY0AYbU';
         const chatId = '656829538';
         
         // Форматируем текст с HTML-разметкой для Telegram
