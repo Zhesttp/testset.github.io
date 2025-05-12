@@ -1,0 +1,489 @@
+.calculator {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .calculator--form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 8px;
+  }
+  
+  .calculator h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #0f33ff;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+  
+  .form-input, .form-select {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .form-input:focus, .form-select:focus {
+    outline: none;
+    border-bottom-color: #0f33ff;
+  }
+  
+  .transport-types {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .transport-option input[type="radio"] {
+    display: none;
+  }
+  
+  .transport-option label {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .transport-option input[type="radio"]:checked + label {
+    border-color: #0f33ff;
+    background-color: rgba(15, 51, 255, 0.1);
+  }
+  
+  .transport-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .transport-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .transport-desc {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  
+  .calculate-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #0f33ff;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #0a25b5;
+  }
+  
+  .result-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+  }
+  
+  .result-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+  }
+  
+  .result-item.total {
+    grid-column: span 2;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: none;
+    margin-top: 10px;
+  }
+  
+  .result-label {
+    font-weight: 300;
+  }
+  
+  .result-value {
+    font-weight: 700;
+  }
+  
+  .request-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    color: #0f33ff;
+    border: 2px solid #0f33ff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .request-btn:hover {
+    background-color: #0f33ff;
+    color: #fff;
+  }
+  
+  .suggestions-box {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+    border-top: none;
+    z-index: 100;
+    display: none;
+  }
+  
+  .suggestions-box div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestions-box div:hover {
+    background-color: #0f33ff;
+  }
+
+  #tnved-suggestions {
+    position: absolute;
+    background: #1a1a1a;
+    border: 1px solid #555;
+    z-index: 1000; /* Чтобы было поверх других элементов */
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 480px) {
+  .calculator {
+    padding: 10px;
+  }
+  input, select {
+    font-size: 14px;
+  }
+}
+
+/* Checkbox styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0f33ff;
+  }
+  
+  .checkbox-text {
+    font-weight: 300;
+  }
+  
+  /* Tab switcher */
+  .tab-switcher {
+    margin-bottom: 20px;
+  }
+  
+  .tab-switcher .transport-option {
+    flex: 1;
+  }
+  
+  .tab-switcher .transport-option label {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .params-tab {
+    display: none;
+  }
+  
+  .params-tab.active {
+    display: block;
+  }
+  
+  /* Dimensions inputs */
+  .dimensions-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .dimension-input {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .dimension-separator {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+  
+  /* Cost input with currency */
+  .cost-input {
+    display: flex;
+  }
+  
+  .cost-input .form-input {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .currency-select {
+    width: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .dimensions-inputs {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .dimension-separator {
+      display: none;
+    }
+  }
+
+  #product-suggestions {
+    position: absolute;
+    width: calc(100% - 20px);
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+    border-top: none;
+    z-index: 1000;
+    display: none;
+  }
+  
+  #product-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #product-suggestions div:hover {
+    background-color: #0f33ff;
+  }
+
+  /* Добавить в конец файла */
+.transport-option {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .transport-types {
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .transport-option {
+      min-width: 100%;
+    }
+  }
+  
+  /* Стили для кнопки связи с менеджером */
+  #contact-manager-btn {
+    margin-top: 20px;
+    background-color: #ff6b0f;
+    color: #fff;
+  }
+  
+  #contact-manager-btn:hover {
+    background-color: #e05a0a;
+  }
+
+  /* Мобильная адаптация результатов */
+@media (max-width: 768px) {
+    .result-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    
+    .result-item.total {
+      grid-column: span 1;
+    }
+    
+    .result-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 0;
+    }
+    
+    .result-label {
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+    
+    .result-value {
+      font-size: 16px;
+    }
+    
+    .result-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .request-btn, .calculate-btn {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
+  /* Стили для формы отправки */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+    color: #0f33ff;
+  }
+  
+  .form-group-modal {
+    margin-bottom: 15px;
+  }
+  
+  .form-group-modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .form-group-modal input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .modal-buttons .submit-btn {
+    background: #0f33ff;
+    color: #fff;
+  }
+  
+  .modal-buttons .cancel-btn {
+    background: #555;
+    color: #fff;
+  }
+
+  .calculator {
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .calculator::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
