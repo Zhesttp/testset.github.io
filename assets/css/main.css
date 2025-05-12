@@ -846,9 +846,9 @@ body {
     .intro--banner h1 {
         margin-top: 0;
     }
-    .intro--options {
+    /* .intro--options {
         display: none;
-    }
+    } */
 }
 
 .work {
