@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Rubik';
-    src: url("fonts/Montserrat-Black.eot");
+    src: url("fonts/Rubik-Black.eot");
     src: local("☺"), url("fonts/Rubik-Black.woff") format("woff"), url("fonts/Rubik-Black.ttf") format("truetype"), url("fonts/Rubik-Black.svg") format("svg");
     font-weight: 900;
     font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Rubik';
-    src: url("fonts/Montserrat-Bold.eot");
+    src: url("fonts/Rubik-Bold.eot");
     src: local("☺"), url("fonts/Rubik-Bold.woff") format("woff"), url("fonts/Rubik-Bold.ttf") format("truetype"), url("fonts/Rubik-Bold.svg") format("svg");
     font-weight: 700;
     font-style: normal;
