@@ -79,4 +79,30 @@ const sectionToNavIndex = {
       if (id) openSection(id);
     });
   });
+
+
+// Добавьте в начало dop.js
+function disableSwipeNavigation() {
+    // Отключаем обработчик свайпа
+    if (window.c) { // Проверяем, существует ли объект Hammer
+        window.c.off("swipeup swipedown");
+    }
+    
+    // Отключаем обработчик клавиш
+    $(document).off('keyup');
+}
+
+// Вызываем эту функцию после загрузки страницы
+$(document).ready(function() {
+    disableSwipeNavigation();
+    
+    // Также отключаем свайп при открытии форм
+    $('form').on('focus', 'input, select, textarea', function() {
+        disableSwipeNavigation();
+    });
+    
+    $('form').on('blur', 'input, select, textarea', function() {
+        disableSwipeNavigation();
+    });
+});
     
