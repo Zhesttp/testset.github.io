@@ -288,7 +288,7 @@
 /* Стиль для раздела Главная */
 /* Стиль для раздела Главная */
 .section--is-active#home {
-    background-image: url("accets/img/back1.png");
+    background-image: url("assets/img/back1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
