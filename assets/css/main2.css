@@ -296,7 +296,7 @@
 }
 
 /* Затемнение фона для лучшей читаемости текста */
-.section--is-active#home::before {
+.section--is-activ::before {
   content: "";
   position: absolute;
   top: 0;
