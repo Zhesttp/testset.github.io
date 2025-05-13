@@ -287,8 +287,8 @@
 /* изображение для фона */
 /* Стиль для раздела Главная */
 /* Стиль для раздела Главная */
-.section--is-active#home {
-    background-image: url("/assets/img/back1.jpg");
+.section--is-active {
+    background-image: url("logo1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -297,11 +297,12 @@
 
 /* Затемнение фона для лучшей читаемости текста */
 .section--is-active#home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный оверлей */
+  z-index: -1;
 }
