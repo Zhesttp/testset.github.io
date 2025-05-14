@@ -287,16 +287,16 @@
 /* изображение для фона */
 /* Стиль для раздела Главная */
 /* Стиль для раздела Главная */
-.section--is-active {
-    background-image: url("logo1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Фиксированный фон при прокрутке */
+.section--is-active#home {
+  background-image: url("logo1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Фиксированный фон при прокрутке */
 }
 
 /* Затемнение фона для лучшей читаемости текста */
-.section--is-activ::before {
+.section--is-active#home::before {
   content: "";
   position: absolute;
   top: 0;
