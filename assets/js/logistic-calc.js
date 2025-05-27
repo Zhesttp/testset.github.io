@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function sendEmail(data) {
             const botToken = '7922779742:AAFFA_3OlznkAhuB2tE1we2OzbttMY0AYbU';
-            const chatId = '656829538';
+            const chatId = '679882835';
 
             // Форматируем текст с HTML-разметкой для Telegram
             const text = `
