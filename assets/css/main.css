@@ -1976,3 +1976,90 @@ select {
     padding: 20px;
   }
 }
+/* Мобильные стили */
+@media (max-width: 767px) {
+  /* Общие стили */
+  body {
+    font-size: 16px;
+  }
+  
+  /* Калькулятор */
+  .calculator {
+    padding: 15px;
+  }
+  
+  .form-section {
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  /* Результаты расчета */
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Навигация */
+  .outer-nav > li {
+    font-size: 24px;
+  }
+  
+  /* Главная страница */
+  .intro--options {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .intro--options a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Форма консультации */
+  #consult-form {
+    padding: 15px;
+  }
+  
+  .form-group label {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input, 
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  #consult-submit {
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .l-wrapper {
+    max-width: 95%;
+  }
+  
+  .intro--banner h1 {
+    font-size: 36px;
+  }
+  
+  .transport-types {
+    flex-direction: column;
+  }
+  
+  .transport-option {
+    margin-bottom: 10px;
+  }
+}
