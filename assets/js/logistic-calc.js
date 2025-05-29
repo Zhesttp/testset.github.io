@@ -77,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-
+        document.getElementById('clear-product-name').addEventListener('click', function() {
+            document.getElementById('product-name').value = '';
+        })
         // Форма расчета
         const calculatorForm = document.getElementById('delivery-calculator');
         if (calculatorForm) {
