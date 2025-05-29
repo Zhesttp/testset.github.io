@@ -48,17 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (productNameInput && tnvedCodeInput && suggestionsBox) {
             productNameInput.addEventListener('input', function() {
                 const query = this.value.toLowerCase();
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
 
-                if (query.length < 2) {
-                    suggestionsBox.style.display = 'none';
-                    return;
-                }
+                if (query.length < 2) return;
 
                 const suggestions = productDatabase.filter(item =>
                     item.name.toLowerCase().includes(query)
-                );
-
-                suggestionsBox.innerHTML = '';
+                ).slice(0, 5); // Ограничим 5 подсказками
 
                 if (suggestions.length > 0) {
                     suggestions.forEach(item => {
@@ -72,14 +69,29 @@ document.addEventListener('DOMContentLoaded', function() {
                         suggestionsBox.appendChild(div);
                     });
                     suggestionsBox.style.display = 'block';
-                } else {
+                }
+            });
+
+            // Скрываем подсказки при клике вне поля
+            document.addEventListener('click', function(e) {
+                if (e.target !== productNameInput) {
                     suggestionsBox.style.display = 'none';
                 }
             });
+
+            // Автозаполнение кода ТНВЭД при фокусе, если есть название
+            tnvedCodeInput.addEventListener('focus', function() {
+                if (!this.value && productNameInput.value) {
+                    const product = productDatabase.find(item => 
+                        item.name.toLowerCase() === productNameInput.value.toLowerCase()
+                    );
+                    if (product) {
+                        this.value = product.code;
+                    }
+                }
+            });
         }
-        document.getElementById('clear-product-name').addEventListener('click', function() {
-            document.getElementById('product-name').value = '';
-        })
+
         // Форма расчета
         const calculatorForm = document.getElementById('delivery-calculator');
         if (calculatorForm) {
@@ -98,9 +110,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cost = parseFloat(document.getElementById('product-cost')?.value) || 0;
                 const currency = document.getElementById('product-currency')?.value || 'usd';
 
-                // Находим товар в базе для определения пошлины
-                const product = productDatabase.find(item => item.code === tnvedCode)
-                    || { duty: 0.10, name: productName, code: tnvedCode }; // Пошлина по умолчанию 10%
+                // Проверка формата кода ТНВЭД
+                if (!/^[\d.]+$/.test(tnvedCode)) {
+                    alert('Код ТНВЭД должен содержать только цифры и точки');
+                    return;
+                }
+
+                // Проверка обязательных полей
+                if (!productName || !tnvedCode) {
+                    alert('Пожалуйста, заполните название товара и код ТНВЭД');
+                    return;
+                }
+
+                // Находим или создаем товар
+                let product;
+                // Сначала пытаемся найти товар в базе по коду
+                product = productDatabase.find(item => item.code === tnvedCode);
+                
+                // Если не нашли по коду, но введенное название совпадает с каким-то в базе
+                if (!product) {
+                    product = productDatabase.find(item => 
+                        item.name.toLowerCase() === productName.toLowerCase()
+                    );
+                }
+                
+                // Если все еще не нашли - создаем новый товар с пошлиной по умолчанию
+                if (!product) {
+                    product = { 
+                        name: productName, 
+                        code: tnvedCode, 
+                        duty: 0.10 // Пошлина по умолчанию 10%
+                    };
+                }
 
                 // Проверка на FTL с превышением лимитов
                 if (transportType === 'ftl' && (weight > 24000 || volume > 60)) {
@@ -199,6 +240,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 `, false);
             });
         }
+
+        document.getElementById('clear-product-name').addEventListener('click', function() {
+            document.getElementById('product-name').value = '';
+        });
 
         // Вспомогательные функции
         function convertToUSD(amount, currency) {
