@@ -1781,3 +1781,60 @@ body {
 .outer-nav > li.is-active {
     color: #ff6b0f; /* Оранжевый цвет вместо синей линии */
 }
+.search-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0088cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #006699;
+}
+.input-with-clear {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.clear-button:hover {
+  opacity: 1;
+}
+
+/* Остальные стили из предыдущего примера */
+.tnved-help-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.search-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0088cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #006699;
+}
