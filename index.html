@@ -57,17 +57,92 @@
                 <div class="intro--options">
                   <a href="#calc-section" onclick="scrollToSection('calc-section')">
                     <h3>Калькулятор</h3>
+                    <span class="hover-border"></span>
                   </a>
                   <a href="#" onclick="openSection('doc-section')">
-                    <h3>Создать документ</h3>
+                    <h3>КОНСУЛЬТАЦИЯ</h3>
+                    <span class="hover-border"></span>
                   </a>
                   <a href="#" onclick="openSection('about-section')">
                     <h3>О нас</h3>
+                    <span class="hover-border"></span>
                   </a>
                 </div>
               </div>
             </div>
           </li>
+
+          <style>
+            .intro--options {
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+            }
+            
+            .intro--options a {
+              position: relative;
+              padding: 12px 24px;
+              text-decoration: none;
+              color: #333;
+              overflow: hidden;
+              transition: all 0.3s ease;
+            }
+            
+            .intro--options a h3 {
+              position: relative;
+              z-index: 2;
+              margin: 0;
+              transition: all 0.3s ease;
+            }
+            
+            .hover-border {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 2px solid transparent;
+              box-sizing: border-box;
+              transition: all 0.5s ease;
+            }
+            
+            .intro--options a:hover {
+              color: #fff;
+              transform: translateY(-3px);
+            }
+            
+            .intro--options a:hover .hover-border {
+              border-color: #4a90e2;
+              animation: borderAnimation 1.5s infinite alternate;
+            }
+            
+            .intro--options a:hover::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(45deg, #4a90e2, #8e44ad);
+              z-index: 1;
+              transform: scale(1.1);
+              opacity: 0.9;
+            }
+            
+            @keyframes borderAnimation {
+              0% {
+                border-color: #4a90e2;
+                transform: scale(1);
+              }
+              50% {
+                border-color: #8e44ad;
+              }
+              100% {
+                border-color: #4a90e2;
+                transform: scale(1.05);
+              }
+            }
+          </style>
           <!-- Конец главной страницы -->
 
           <!-- Калькулятор -->
@@ -216,44 +291,113 @@
           <!-- создание документа -->
           <li class="l-section section" id="doc-section">
             <div class="work">
-              <h2>Создание документа</h2>
-              <form id="doc-form">
+              <h2>Запись на консультацию</h2>
+              <form id="consult-form">
                 <div class="form-group">
-                  <input type="text" id="fio" name="fio" required autocomplete="off" />
-                  <label for="fio">ФИО</label>
+                  <label for="client-name">Ваше имя</label>
+                  <input type="text" id="client-name" name="client-name" required autocomplete="off" />
                 </div>
               
                 <div class="form-group">
-                  <input type="text" id="country" name="country" required autocomplete="off" />
-                  <label for="country">Страна</label>
+                  <label for="client-phone">Телефон</label>
+                  <input type="tel" id="client-phone" name="client-phone" required autocomplete="off" />
                 </div>
               
                 <div class="form-group">
-                  <input type="text" id="city" name="city" required autocomplete="off" />
-                  <label for="city">Город</label>
+                  <label for="client-email">Email (необязательно)</label>
+                  <input type="email" id="client-email" name="client-email" autocomplete="off" />
                 </div>
               
                 <div class="form-group">
-                  <input type="tel" id="phone" name="phone" required autocomplete="off" />
-                  <label for="phone">Телефон</label>
-                </div>
-              
-                <div class="form-group">
-                  <select id="doctype" name="doctype" required>
+                  <label for="consult-type">Тип консультации</label>
+                  <select id="consult-type" name="consult-type" required>
                     <option value="" disabled selected>Выберите тип</option>
-                    <option value="pdf">PDF</option>
-                    <option value="docx">DOCX</option>
-                    <option value="txt">TXT</option>
-                    <option value="rtf">RTF</option>
+                    <option value="legal">Юридическая</option>
+                    <option value="financial">Финансовая</option>
+                    <option value="technical">Техническая</option>
+                    <option value="other">Другое</option>
                   </select>
-                  <label for="doctype"></label>
                 </div>
               
-                <button type="submit">Создать</button>
-              </form>
+                <div class="form-group">
+                  <label for="client-message">Кратко опишите ваш вопрос</label>
+                  <textarea id="client-message" name="client-message" rows="4"></textarea>
+                </div>
               
+                <button type="submit" id="consult-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+                <div id="form-message"></div>
+              </form>
             </div>
           </li>
+          <script>
+          document.getElementById('consult-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('consult-submit');
+            const formMessage = document.getElementById('form-message');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            
+            // Собираем данные формы
+            const formData = {
+              name: document.getElementById('client-name').value,
+              phone: document.getElementById('client-phone').value,
+              email: document.getElementById('client-email').value || 'Не указан',
+              consultType: document.getElementById('consult-type').value,
+              message: document.getElementById('client-message').value || 'Не указано'
+            };
+            
+            // Здесь нужно указать токен вашего бота и chat_id администратора
+            const botToken = '7922779742:AAFFA_3OlznkAhuB2tE1we2OzbttMY0AYbU';
+            const chatId = '679882835';
+            
+            // Формируем сообщение для Telegram
+            const text = `Новая заявка на консультацию:\n\n` +
+                        `Имя: ${formData.name}\n` +
+                        `Телефон: ${formData.phone}\n` +
+                        `Email: ${formData.email}\n` +
+                        `Тип консультации: ${formData.consultType}\n` +
+                        `Сообщение: ${formData.message}`;
+            
+            // Отправляем данные в Telegram бота
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                chat_id: chatId,
+                text: text
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              formMessage.style.display = 'block';
+              if (data.ok) {
+                formMessage.textContent = 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                formMessage.style.backgroundColor = '#d4edda';
+                formMessage.style.color = '#155724';
+                document.getElementById('consult-form').reset();
+              } else {
+                formMessage.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте позже.';
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+              }
+            })
+            .catch(error => {
+              formMessage.style.display = 'block';
+              formMessage.textContent = 'Ошибка сети. Пожалуйста, проверьте соединение и попробуйте снова.';
+              formMessage.style.backgroundColor = '#f8d7da';
+              formMessage.style.color = '#721c24';
+              console.error('Error:', error);
+            })
+            .finally(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Отправить заявку';
+            });
+          });
+          </script>
           <!-- конец создания документа  -->
 
           <!-- Отслеживание -->
@@ -295,7 +439,7 @@
   <ul class="outer-nav ">
     <li class="is-active">ГЛАВНАЯ</li>
     <li>КАЛЬКУЛЯТОР</li>
-    <li>ДОКУМЕНТЫ</li>
+    <li>КОНСУЛЬТАЦИЯ</li>
     <li>ОТСЛЕЖИВАНИЕ</li>
     <li>О НАС</li>
   </ul>
