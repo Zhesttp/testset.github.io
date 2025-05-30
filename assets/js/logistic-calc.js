@@ -1,3 +1,4 @@
+
 let productDatabase = [];
 
 function loadProductDatabase() {
@@ -46,16 +47,47 @@ document.addEventListener('DOMContentLoaded', function() {
         const suggestionsBox = document.getElementById('product-suggestions');
 
         if (productNameInput && tnvedCodeInput && suggestionsBox) {
+            const productNameClear = document.createElement('button');
+            productNameClear.innerHTML = '🗑️';
+            productNameClear.className = 'clear-input-btn';
+            productNameClear.title = 'Очистить поле';
+            productNameClear.addEventListener('click', () => {
+                productNameInput.value = '';
+                productNameInput.focus();
+            });
+            productNameInput.parentNode.insertBefore(productNameClear, productNameInput.nextSibling);
+            const tnvedCodeClear = document.createElement('button');
+            tnvedCodeClear.innerHTML = '🗑️';
+            tnvedCodeClear.className = 'clear-input-btn';
+            tnvedCodeClear.title = 'Очистить поле';
+            tnvedCodeClear.addEventListener('click', () => {
+                tnvedCodeInput.value = '';
+                tnvedCodeInput.focus();
+            });
+            tnvedCodeInput.parentNode.insertBefore(tnvedCodeClear, tnvedCodeInput.nextSibling);
+
+            // Добавляем кнопку "Не нашли подходящий код"
+            const notFoundBtn = document.createElement('button');
+            notFoundBtn.textContent = 'Не нашли подходящий код?';
+            notFoundBtn.className = 'not-found-btn';
+            notFoundBtn.addEventListener('click', () => {
+                window.open('https://t.me/tnved_get_bot', '_blank');
+            });
+            tnvedCodeInput.parentNode.appendChild(notFoundBtn);
+
             productNameInput.addEventListener('input', function() {
                 const query = this.value.toLowerCase();
-                suggestionsBox.innerHTML = '';
-                suggestionsBox.style.display = 'none';
 
-                if (query.length < 2) return;
+                if (query.length < 2) {
+                    suggestionsBox.style.display = 'none';
+                    return;
+                }
 
                 const suggestions = productDatabase.filter(item =>
                     item.name.toLowerCase().includes(query)
-                ).slice(0, 5); // Ограничим 5 подсказками
+                );
+
+                suggestionsBox.innerHTML = '';
 
                 if (suggestions.length > 0) {
                     suggestions.forEach(item => {
@@ -69,26 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         suggestionsBox.appendChild(div);
                     });
                     suggestionsBox.style.display = 'block';
-                }
-            });
-
-            // Скрываем подсказки при клике вне поля
-            document.addEventListener('click', function(e) {
-                if (e.target !== productNameInput) {
+                } else {
                     suggestionsBox.style.display = 'none';
                 }
             });
-
-            // Автозаполнение кода ТНВЭД при фокусе, если есть название
-            tnvedCodeInput.addEventListener('focus', function() {
-                if (!this.value && productNameInput.value) {
-                    const product = productDatabase.find(item => 
-                        item.name.toLowerCase() === productNameInput.value.toLowerCase()
-                    );
-                    if (product) {
-                        this.value = product.code;
-                    }
-                }
+             tnvedCodeInput.addEventListener('input', function() {
+                // Можно добавить валидацию кода при необходимости
             });
         }
 
@@ -110,38 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cost = parseFloat(document.getElementById('product-cost')?.value) || 0;
                 const currency = document.getElementById('product-currency')?.value || 'usd';
 
-                // Проверка формата кода ТНВЭД
-                if (!/^[\d.]+$/.test(tnvedCode)) {
-                    alert('Код ТНВЭД должен содержать только цифры и точки');
-                    return;
-                }
-
-                // Проверка обязательных полей
-                if (!productName || !tnvedCode) {
-                    alert('Пожалуйста, заполните название товара и код ТНВЭД');
-                    return;
-                }
-
-                // Находим или создаем товар
-                let product;
-                // Сначала пытаемся найти товар в базе по коду
-                product = productDatabase.find(item => item.code === tnvedCode);
-                
-                // Если не нашли по коду, но введенное название совпадает с каким-то в базе
-                if (!product) {
-                    product = productDatabase.find(item => 
-                        item.name.toLowerCase() === productName.toLowerCase()
-                    );
-                }
-                
-                // Если все еще не нашли - создаем новый товар с пошлиной по умолчанию
-                if (!product) {
-                    product = { 
-                        name: productName, 
-                        code: tnvedCode, 
-                        duty: 0.10 // Пошлина по умолчанию 10%
-                    };
-                }
+                // Находим товар в базе для определения пошлины
+                const product = productDatabase.find(item => item.code === tnvedCode)
+                    || { duty: 0.10, name: productName, code: tnvedCode }; // Пошлина по умолчанию 10%
 
                 // Проверка на FTL с превышением лимитов
                 if (transportType === 'ftl' && (weight > 24000 || volume > 60)) {
@@ -240,10 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 `, false);
             });
         }
-
-        document.getElementById('clear-product-name').addEventListener('click', function() {
-            document.getElementById('product-name').value = '';
-        });
 
         // Вспомогательные функции
         function convertToUSD(amount, currency) {
@@ -395,22 +380,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function sendEmail(data) {
             const botToken = '7922779742:AAFFA_3OlznkAhuB2tE1we2OzbttMY0AYbU';
-            const chatId = '511108569';
+            const chatId = '679882835';
 
             // Форматируем текст с HTML-разметкой для Telegram
             const text = `
-<b>🚚 Новая заявка на доставку</b>
+            <b>🚚 Новая заявка на доставку</b>
 
-<b>👤 Контактные данные:</b>
-<i>Имя:</i> <b>${data.name || 'Не указано'}</b>
-<i>Телефон:</i> <code>${data.phone || 'Не указан'}</code>
-<i>Email:</i> <code>${data.email || 'Не указан'}</code>
-<i>Комментарий:</i> ${data.comments || 'Нет комментариев'}
+            <b>👤 Контактные данные:</b>
+            <i>Имя:</i> <b>${data.name || 'Не указано'}</b>
+            <i>Телефон:</i> <code>${data.phone || 'Не указан'}</code>
+            <i>Email:</i> <code>${data.email || 'Не указан'}</code>
+            <i>Комментарий:</i> ${data.comments || 'Нет комментариев'}
 
-<b>📊 Данные расчета:</b>
-<pre>${formatCalculationData(data.calculationData)}</pre>
+            <b>📊 Данные расчета:</b>
+            <pre>${formatCalculationData(data.calculationData)}</pre>
 
-<i>📅 ${new Date().toLocaleString()}</i>
+            <i>📅 ${new Date().toLocaleString()}</i>
             `;
 
             fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -450,15 +435,42 @@ document.addEventListener('DOMContentLoaded', function() {
             return lines.join('\n');
         }
 
-        // Scroll-эффект для логотипа (если нужно)
-        const calculator = document.querySelector('.calculator');
-        const logo = document.querySelector('.header--logo');
-        if (calculator && logo) {
-            calculator.addEventListener('scroll', function() {
-                const scrollPosition = this.scrollTop;
-                const opacity = Math.min(scrollPosition / 100, 0.7);
-                logo.style.backgroundColor = `rgba(15, 15, 15, ${opacity})`;
+        // Обработка формы консультации
+        document.addEventListener('DOMContentLoaded', function() {
+        const consultForm = document.getElementById('consult-form');
+        
+        if (consultForm) {
+            consultForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Это предотвратит перезагрузку страницы
+            
+            const submitBtn = document.getElementById('consult-submit');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
+            
+            const name = document.getElementById('consult-name').value.trim();
+            let telegram = document.getElementById('consult-telegram').value.trim();
+            const phone = document.getElementById('consult-phone').value.trim();
+            const message = document.getElementById('consult-message').value.trim();
+            
+            // Валидация Telegram (добавляем @ если отсутствует)
+            if (!telegram.startsWith('@') && telegram !== '') {
+                telegram = '@' + telegram;
+            }
+            
+            try {
+                await sendConsultationRequest(name, telegram, phone, message);
+                showConsultResult('✅ Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.', true);
+                consultForm.reset();
+            } catch (error) {
+                console.error('Ошибка отправки:', error);
+                showConsultResult('❌ Ошибка при отправке. Пожалуйста, попробуйте позже.', false);
+            } finally {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
             });
         }
+        });
     });
 });
