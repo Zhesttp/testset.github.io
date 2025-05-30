@@ -1,0 +1,57 @@
+#doc-section .work {
+    padding: 24px 8px;
+    max-width: 98vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#consult-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#consult-form .form-group {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#consult-form input,
+#consult-form textarea {
+    width: 100%;
+    padding: 12px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #181818;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+#consult-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+#consult-submit {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #doc-section .work {
+        padding: 8px 2vw;
+    }
+    #consult-form input,
+    #consult-form textarea {
+        font-size: 15px;
+        padding: 10px 8px;
+    }
+    #consult-submit {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+}
