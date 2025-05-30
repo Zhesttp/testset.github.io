@@ -282,9 +282,6 @@
   color: #fff;
 }
 
-
-
-/* изображение для фона */
 /* Стиль для раздела Главная */
 /* Стиль для раздела Главная */
 .section--is-active#home {
@@ -305,4 +302,209 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный оверлей */
   z-index: -1;
+}
+
+/* Стили для кнопок на главной странице */
+.intro--options > a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 10px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 2px solid #fb992e;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: rgba(251, 153, 46, 0.1);
+}
+
+.intro--options > a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(251, 153, 46, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.intro--options > a:hover {
+  color: #fff;
+  background: rgba(251, 153, 46, 0.2);
+  box-shadow: 0 0 10px #fb992e, 0 0 20px #fb992e, 0 0 30px #fb992e;
+}
+
+.intro--options > a:hover::before {
+  left: 100%;
+}
+
+.intro--options > a h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.intro--options > a:hover h3 {
+  transform: scale(1.05);
+}
+
+/* Анимация свечения для кнопок */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #fb992e;
+  }
+  50% {
+    box-shadow: 0 0 20px #fb992e;
+  }
+  100% {
+    box-shadow: 0 0 5px #fb992e;
+  }
+}
+
+.intro--options > a {
+  animation: glow 3s infinite alternate;
+}
+.btn-border {
+  position: absolute;
+  display: block;
+}
+
+.btn-border:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fb992e);
+  animation: borderTop 2s linear infinite;
+}
+
+@keyframes borderTop {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+/* Стили для формы консультации */
+#doc-section .work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#consult-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#consult-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Rubik', sans-serif;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+#consult-form textarea:focus {
+  outline: none;
+  border-bottom-color: #fb992e;
+}
+
+#consult-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(251, 153, 46, 0.1);
+  border: 1px solid #fb992e;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+}
+#consult-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #fb992e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+#consult-submit:hover {
+  background-color: #e08a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(251, 153, 46, 0.4);
+}
+
+#consult-submit:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* Стили для кнопок очистки */
+.clear-input-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.clear-input-btn:hover {
+    color: #fb992e;
+}
+
+/* Позиционирование для полей с кнопками очистки */
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    padding-right: 30px !important;
+}
+
+/* Стили для кнопки "Не нашли подходящий код" */
+.not-found-btn {
+    display: block;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #fb992e;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.not-found-btn:hover {
+    color: #e08a2a;
 }
