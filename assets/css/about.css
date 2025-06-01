@@ -285,3 +285,47 @@
     margin: 0 auto;
   }
 }
+/* Оптимизация для Telegram Web App */
+#about-section {
+  background-color: #121212 !important;
+  background-image: none !important;
+  padding: 20px 10px !important;
+}
+
+.about-container {
+  background-color: #121212 !important;
+  padding: 20px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Упрощаем анимации для Telegram */
+.feature-card, .contact-btn, .gallery-item {
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Оптимизация iframe Instagram */
+.reel-item {
+  min-height: 500px; /* Фиксированная высота для Telegram */
+}
+
+.reel-iframe {
+  pointer-events: none; /* Решает проблемы с тапами в Telegram */
+}
+
+/* Улучшаем отображение кнопок */
+.contact-btn {
+  padding: 15px 10px !important;
+  font-size: 14px !important;
+}
+
+/* Галерея для Telegram */
+.about-gallery {
+  grid-template-columns: 1fr !important;
+}
+
+.gallery-item {
+  height: 200px !important;
+  margin-bottom: 15px;
+}
