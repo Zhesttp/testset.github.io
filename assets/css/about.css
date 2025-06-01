@@ -286,46 +286,81 @@
   }
 }
 /* Оптимизация для Telegram Web App */
+/* Reset для Telegram Web App */
 #about-section {
-  background-color: #121212 !important;
-  background-image: none !important;
-  padding: 20px 10px !important;
+  background: #121212 !important;
+  padding: 0 !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .about-container {
-  background-color: #121212 !important;
-  padding: 20px !important;
-  border: none !important;
+  padding: 15px !important;
+  background: transparent !important;
   box-shadow: none !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
 }
 
-/* Упрощаем анимации для Telegram */
-.feature-card, .contact-btn, .gallery-item {
-  transition: none !important;
-  transform: none !important;
+/* Упрощенные элементы */
+.about-title {
+  font-size: 24px !important;
+  margin: 10px 0 20px !important;
+  text-align: center !important;
+  color: #fb992e !important;
 }
 
-/* Оптимизация iframe Instagram */
-.reel-item {
-  min-height: 500px; /* Фиксированная высота для Telegram */
-}
-
-.reel-iframe {
-  pointer-events: none; /* Решает проблемы с тапами в Telegram */
-}
-
-/* Улучшаем отображение кнопок */
-.contact-btn {
-  padding: 15px 10px !important;
+.about-text {
   font-size: 14px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
 }
 
-/* Галерея для Telegram */
+/* Карточки в один столбец */
+.about-features {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin: 15px 0 !important;
+}
+
+.feature-card {
+  background: rgba(40, 40, 40, 0.7) !important;
+  padding: 12px !important;
+  border-left: 3px solid #fb992e !important;
+  border-radius: 0 !important;
+}
+
+/* Галерея */
 .about-gallery {
-  grid-template-columns: 1fr !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin: 15px 0 !important;
 }
 
 .gallery-item {
-  height: 200px !important;
-  margin-bottom: 15px;
+  height: 180px !important;
+  border-radius: 0 !important;
+}
+
+/* Кнопки */
+.contact-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin: 20px 0 40px !important;
+  position: sticky !important;
+  bottom: 10px !important;
+}
+
+.contact-btn {
+  padding: 12px !important;
+  text-align: center !important;
+  border-radius: 0 !important;
+  background: rgba(251, 153, 46, 0.2) !important;
+  font-size: 14px !important;
 }
