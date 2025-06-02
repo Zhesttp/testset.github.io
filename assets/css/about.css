@@ -4,6 +4,12 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Блокируем горизонтальный скролл */
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  position: relative;
 }
 
 .l-viewport {
@@ -26,7 +32,7 @@ html, body {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  overflow-y: auto; /* Вертикальная прокрутка */
+  overflow: hidden; /* убираем вертикальный скролл здесь */
 }
 
 #about-section::before {
@@ -50,9 +56,8 @@ html, body {
   border-radius: 15px;
   border: 1px solid rgba(251, 153, 46, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  width: calc(100% - 40px);
+  width: 100%;
   box-sizing: border-box;
-  overflow: visible; /* Фикс обрезания контента */
 }
 
 .about-title {
@@ -159,7 +164,6 @@ html, body {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin: 40px 0;
-  overflow: visible;
 }
 
 .gallery-item {
@@ -255,22 +259,21 @@ html, body {
 @media (max-width: 768px) {
   .about-container {
     padding: 20px;
-    width: calc(100% - 20px);
   }
-  
+
   .about-title {
     font-size: 28px;
   }
-  
+
   .about-features,
   .contact-buttons {
     grid-template-columns: 1fr;
   }
-  
+
   .gallery-item {
     height: 120px;
   }
-  
+
   .reels-container {
     grid-template-columns: 1fr;
   }
@@ -280,24 +283,24 @@ html, body {
   .about-container {
     padding: 15px;
   }
-  
+
   .about-title {
     font-size: 24px;
   }
-  
+
   .about-text {
     font-size: 14px;
   }
-  
+
   .feature-card {
     padding: 15px;
   }
-  
+
   .contact-btn {
     padding: 10px 15px;
     font-size: 14px;
   }
-  
+
   .gallery-item {
     height: 100px;
   }
