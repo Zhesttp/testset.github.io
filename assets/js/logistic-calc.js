@@ -67,13 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tnvedCodeInput.parentNode.insertBefore(tnvedCodeClear, tnvedCodeInput.nextSibling);
 
             // Добавляем кнопку "Не нашли подходящий код"
-            const notFoundBtn = document.createElement('button');
-            notFoundBtn.textContent = 'Не нашли подходящий код?';
-            notFoundBtn.className = 'not-found-btn';
-            notFoundBtn.addEventListener('click', () => {
-                window.open('https://t.me/tnved_get_bot', '_blank');
-            });
-            tnvedCodeInput.parentNode.appendChild(notFoundBtn);
+           
 
             productNameInput.addEventListener('input', function() {
                 const query = this.value.toLowerCase();
