@@ -1,20 +1,32 @@
-/* Основные стили для секции "О нас" */
+/* ===== ОБЩИЕ ФИКСЫ ===== */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Блокируем горизонтальный скролл */
+}
+
+.l-viewport {
+  overflow-y: auto; /* Разрешаем вертикальную прокрутку */
+  height: 100vh;
+}
+
+/* ===== СЕКЦИЯ "О НАС" ===== */
 #about-section {
   background-color: #121212;
   color: #fff;
-  padding: 20px 0;
+  padding: 40px 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background-image: url('assets/img/about-bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
   width: 100%;
-  overflow: hidden;
   box-sizing: border-box;
+  overflow-y: auto; /* Вертикальная прокрутка */
 }
 
 #about-section::before {
@@ -33,13 +45,14 @@
   z-index: 1;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px;
   background-color: rgba(30, 30, 30, 0.9);
   border-radius: 15px;
   border: 1px solid rgba(251, 153, 46, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   width: calc(100% - 40px);
   box-sizing: border-box;
+  overflow: visible; /* Фикс обрезания контента */
 }
 
 .about-title {
@@ -54,7 +67,7 @@
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 40px;
 }
 
 .about-text {
@@ -69,17 +82,17 @@
   font-weight: 700;
 }
 
-/* Стили для карточек с преимуществами */
+/* ===== КАРТОЧКИ ПРЕИМУЩЕСТВ ===== */
 .about-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .feature-card {
   background: rgba(40, 40, 40, 0.7);
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
   border-left: 4px solid #fb992e;
   transition: transform 0.3s ease;
@@ -107,19 +120,20 @@
   color: #aaa;
 }
 
-/* Стили для контактных кнопок */
+/* ===== КОНТАКТНЫЕ КНОПКИ ===== */
 .contact-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
-  margin: 30px 0;
+  margin: 40px 0;
   width: 100%;
 }
 
 .contact-btn {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  justify-content: center;
+  padding: 12px 25px;
   background: rgba(251, 153, 46, 0.1);
   color: #fff;
   border: 1px solid #fb992e;
@@ -127,9 +141,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  justify-content: center;
   text-align: center;
-  white-space: nowrap;
 }
 
 .contact-btn:hover {
@@ -141,18 +153,19 @@
   font-size: 18px;
 }
 
-/* Галерея изображений */
+/* ===== ГАЛЕРЕЯ ===== */
 .about-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  margin: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 40px 0;
+  overflow: visible;
 }
 
 .gallery-item {
   border-radius: 8px;
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   position: relative;
   background: #333;
 }
@@ -168,9 +181,9 @@
   transform: scale(1.05);
 }
 
-/* Стили для блока Instagram */
+/* ===== INSTAGRAM REELS ===== */
 .instagram-reels {
-  margin: 30px 0;
+  margin: 50px 0;
   text-align: center;
 }
 
@@ -178,13 +191,25 @@
   font-size: 24px;
   color: #fb992e;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.reels-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #fb992e;
 }
 
 .reels-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  margin: 20px 0;
+  margin-top: 30px;
 }
 
 .reel-item {
@@ -203,6 +228,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 200px;
 }
 
 .reel-placeholder i {
@@ -213,7 +239,7 @@
 
 .instagram-link {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #fb992e;
   text-decoration: none;
   font-weight: 600;
@@ -222,9 +248,10 @@
 
 .instagram-link:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
-/* Адаптация для мобильных устройств */
+/* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
   .about-container {
     padding: 20px;
@@ -235,20 +262,25 @@
     font-size: 28px;
   }
   
-  .about-features {
-    grid-template-columns: 1fr;
-  }
-  
+  .about-features,
   .contact-buttons {
     grid-template-columns: 1fr;
   }
   
   .gallery-item {
-    height: 100px;
+    height: 120px;
+  }
+  
+  .reels-container {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  .about-container {
+    padding: 15px;
+  }
+  
   .about-title {
     font-size: 24px;
   }
@@ -265,22 +297,8 @@
     padding: 10px 15px;
     font-size: 14px;
   }
-}
-
-/* Фикс для горизонтального скролла */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.l-wrapper {
-  overflow: hidden;
-}
-
-/* Фикс для плавающих элементов */
-.fixed-element {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+  
+  .gallery-item {
+    height: 100px;
+  }
 }
